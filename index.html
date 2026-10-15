@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Turn long URLs into short, shareable links.">
+  <title>LinkLite — URL Shortener</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <nav class="nav">
+      <a class="brand" href="/" aria-label="LinkLite home"><span class="brand-icon">↗</span> LinkLite</a>
+      <span class="nav-label">Simple URL Shortener</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span> SHORTEN. SHARE. SIMPLIFY.</div>
+      <h1>Links made <span>shorter.</span></h1>
+      <p class="subtitle">Make long URLs clean, compact, and easy to share.</p>
+
+      <form id="shorten-form" class="shortener-card">
+        <label for="url-input">Paste your long URL</label>
+        <div class="input-row">
+          <span class="input-icon">↗</span>
+          <input id="url-input" name="url" type="url"
+                 placeholder="https://example.com/your/very/long/link"
+                 autocomplete="url" required>
+          <button id="submit-button" type="submit">Shorten URL <span>→</span></button>
+        </div>
+        <p class="helper">Use a complete URL beginning with https:// or http://</p>
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+        <div id="result" class="result" hidden>
+          <div>
+            <span class="result-label">YOUR SHORT LINK</span>
+            <a id="short-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+          </div>
+          <button id="copy-button" class="copy-button" type="button">Copy link</button>
+        </div>
+      </form>
+
+      <div class="features">
+        <div class="feature"><span class="feature-icon">⚡</span><div><strong>Fast redirects</strong><small>Get where you need to go.</small></div></div>
+        <div class="feature"><span class="feature-icon">⌁</span><div><strong>Unique short links</strong><small>Compact, shareable URLs.</small></div></div>
+        <div class="feature"><span class="feature-icon">✓</span><div><strong>Simple to use</strong><small>Paste, shorten, and share.</small></div></div>
+      </div>
+    </section>
+    <footer>Built as a CodeAlpha Backend Development Internship project.</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
